@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Page</title>
+</head>
+<body>
+	<h1>Test Page</h1>
+	<p>Click the button below to send a curl request to the load balancer:</p>
+	<button onclick="sendRequest()">Send Request</button>
+
+	<script type="text/javascript">
+		function sendRequest() {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://" + process.env.LOAD_BALANCER_DNS, true);
+			xhr.send();
+		}
+	</script>
+</body>
+</html>
