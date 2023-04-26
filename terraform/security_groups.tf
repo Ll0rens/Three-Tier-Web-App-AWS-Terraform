@@ -32,6 +32,13 @@ resource "aws_security_group" "presentation_alb_sg" {
         ipv6_cidr_blocks = ["::/0"]
     }
 
+    ingress {
+        from_port   = 22
+        to_port     = 22
+        protocol    = "tcp"
+        cidr_blocks      = [var.admin_ip]
+    }
+
     egress {
         from_port        = 0
         to_port          = 0

@@ -64,7 +64,6 @@ resource "aws_lb_listener" "application_alb_listener_1" {
     }                                                                      
 }                                                                          
 
-
 output "application_alb" {
     value = aws_lb.application_alb.dns_name
 }
